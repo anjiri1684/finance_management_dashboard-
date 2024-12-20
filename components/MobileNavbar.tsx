@@ -6,10 +6,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import Footer from "./Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { sidebarLinks } from "@/constants/index";
 import { cn } from "@/lib/utils";
+import { sidebarLinks } from "@/constants/index";
 import { usePathname } from "next/navigation";
 
 function MobileNavbar({ user }: MobileNavProps) {
@@ -81,7 +83,7 @@ function MobileNavbar({ user }: MobileNavProps) {
                 USER
               </nav>
             </SheetClose>
-            FOOTER
+            <Footer user={user} type="mobile" />
           </div>
         </SheetContent>
       </Sheet>

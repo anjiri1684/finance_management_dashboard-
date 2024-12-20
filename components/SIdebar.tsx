@@ -1,11 +1,12 @@
 "use client";
 
-import { sidebarLinks } from "@/constants";
-import { cn } from "@/lib/utils";
+import Footer from "./Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
+import { cn } from "@/lib/utils";
+import { sidebarLinks } from "@/constants";
+import { usePathname } from "next/navigation";
 
 function SIdebar({ user }: SiderbarProps) {
   const pathName = usePathname();
@@ -52,7 +53,7 @@ function SIdebar({ user }: SiderbarProps) {
         })}
         USER
       </nav>
-      FOOTER
+      <Footer user={user} />
     </section>
   );
 }
