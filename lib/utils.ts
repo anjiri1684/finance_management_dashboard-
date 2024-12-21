@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { type ClassValue, clsx } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
@@ -77,7 +76,12 @@ export function formatAmount(amount: number): string {
   return formatter.format(amount);
 }
 
-export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
+export const parseStringify = (value: any) => {
+  if (value === undefined || value === null) {
+    throw new Error("Invalid input: value is undefined or null");
+  }
+  return JSON.parse(JSON.stringify(value));
+};
 
 export const removeSpecialCharacters = (value: string) => {
   return value.replace(/[^\w\s]/gi, "");
@@ -138,6 +142,7 @@ export function countTransactionCategories(
   let totalCount = 0;
 
   // Iterate over each transaction
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   transactions &&
     transactions.forEach((transaction) => {
       // Extract the category from the transaction

@@ -31,8 +31,8 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
-  address1: string;
   name: string;
+  address1: string;
   city: string;
   state: string;
   postalCode: string;
@@ -58,7 +58,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type Transaction = {
@@ -87,7 +87,7 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type AccountTypes =
@@ -201,7 +201,7 @@ declare interface BankTabItemProps {
   appwriteItemId?: string;
 }
 
-declare interface TotlaBalanceBoxProps {
+declare interface TotalBalanceBoxProps {
   accounts: Account[];
   totalBanks: number;
   totalCurrentBalance: number;
@@ -209,7 +209,7 @@ declare interface TotlaBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
-  type?: mobile | "desktop";
+  type?: "mobile" | "desktop";
 }
 
 declare interface RightSidebarProps {
@@ -312,7 +312,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-  sharableId: string;
+  shareableId: string;
 }
 
 declare interface getBanksProps {

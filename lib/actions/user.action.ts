@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use server";
 
 import {
@@ -133,6 +132,7 @@ export const logoutAccount = async () => {
 
     await account.deleteSession("current");
   } catch (error) {
+    console.log(error);
     return null;
   }
 };

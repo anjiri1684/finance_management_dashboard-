@@ -3,6 +3,7 @@
 import Footer from "./Footer";
 import Image from "next/image";
 import Link from "next/link";
+import PlaidLink from "./PlaidLink";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { sidebarLinks } from "@/constants";
@@ -51,7 +52,7 @@ function SIdebar({ user }: SiderbarProps) {
             </Link>
           );
         })}
-        USER
+        <PlaidLink user={user} />
       </nav>
       <Footer user={user} />
     </section>
